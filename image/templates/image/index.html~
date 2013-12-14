@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<img src="/media/perro.jpg" />
+<ul>
+{% for pho in photos %}
+
+<li>{{ pho.nombre }} </li>
+<li><img src="/media/media/{{ pho.imagen.name }}" alt="{{ pho.imagen.name }}" /> </li>
+<li><img src="{{ pho.imagen.path }}" alt="{{ pho.imagen.path }}" /> </li>
+<li><img src="{{ pho.imagen.url }}" alt="{{ pho.imagen.url }}" /> </li>
+
+{% empty %}
+<p> No hay photos que mostrar </p>
+{% endfor %}
+</ul>
+
+<p>Hola soy el index de Image app </p>
+
+<ul>
+{% for p in pics %}
+
+<li>{{ p.nombre }} </li>
+<li><img src="{{ STATIC_URL }}{{ p.imagen.name }}" alt="{{ p.imagen.name }}" /> </li>
+<li><img src="{{ p.imagen.path }}" alt="{{ p.imagen.path }}" /> </li>
+<li><img src="{{ p.imagen.url }}" alt="{{ p.imagen.url }}" /> </li>
+
+{% empty %}
+<p> No hay pics que mostrar </p>
+{% endfor %}
+</ul>
+
+<IMG SRC="/media/lentes.jpeg" ALT="probando media">
+<ul>
+{% for i in imgs %}
+
+<li>{{ i.nombre }} </li>
+<li><img src="{{ STATIC_URL }}{{ i.imagen.name }}" alt="{{ i.imagen.name }}" /> </li>
+<li><img src="{{ i.imagen.path }}" alt="{{ i.imagen.path }}" /> </li>
+<li><img src="{{ i.imagen.url }}" alt="{{ i.imagen.url }}" /> </li>
+
+{% empty %}
+<p> No hay imagens a mostrar </p>
+{% endfor %}
+</ul>
+
+<IMG SRC="{% static 'image/img/lentes.jpeg' %}" ALT="probando">
+<IMG SRC="/static/image/img/lentes.jpeg" ALT="probando2">
+<IMG SRC="{{ STATIC_URL }}image/img/lentes.jpeg" ALT="probando3">

@@ -1,0 +1,10 @@
+from django.forms import ModelForm
+from image.models import Images, Pics
+
+class ImageForm(ModelForm):
+	class Meta:
+		model = Images
+
+class PicForm(ModelForm):
+	class Meta:
+		model = Pics

@@ -1,0 +1,16 @@
+
+
+<ld>
+{% for b in books %}
+<li>{{ b.title }}</li>
+<li>Genre:<br/>
+{% for g in b.genre.all %}
+<li>{{ g.name }}</li>
+{% endfor %}
+</li>
+<li>{{ b.author.name }}</li>
+<br/>
+{% empty %}
+<li>No hay Libros</li>
+{% endfor %}
+</ld>

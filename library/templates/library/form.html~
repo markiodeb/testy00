@@ -1,0 +1,20 @@
+<script src="{{STATIC_URL}}library/js/jquery-1.9.1.js"></script>
+<script>
+$(document).ready(function(){
+$('#id_genre').change(function(){
+	var oli = $('#id_genre:last_child')
+    $('#books').load('{% url 'library:get_genre_books' %}'+"?genre="+oli);
+});
+});
+</script>
+<form action="" method="post">{% csrf_token %}
+
+{{ form.genre }}
+<div id="books"></div>
+<input type="submit" value="Submit" disabled="yes" />
+
+</form>
+
+<br/>
+
+{% url 'library:get_genre_books' %}
